@@ -11,7 +11,7 @@
 </head>
 <body>
     <x-navbar />
-    <div style="margin-top: 100px;">
+    <div class="min-vh-100">
         {{$slot}}
         <x-footer />
     </div>

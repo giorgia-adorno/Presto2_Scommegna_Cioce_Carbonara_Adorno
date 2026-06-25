@@ -12,8 +12,9 @@
                 Dettaglio
             </a>
             <a href="{{ route('byCategory', ['category' => $article->category]) }}" class="text-decoration-none small fw-medium" style="color: #aaa; font-size: 12px;">
-                {{-- {{ $article->category->name }} --}}
-                Categoria
+                Categoria: <strong>
+                {{ $article->category->name }}
+                </strong>
             </a>
         </div>
     </div>

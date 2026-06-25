@@ -4,7 +4,9 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <a href="{{ route('homepage') }}" class="logo">
-                        subirra.it
+                        <p>Subirra.it</p>
+                        <img class="logonav" src="{{ asset('/storage/images/logo.png') }}" alt="Logo Presto">
+                    </a>
                     </a>
                     <ul class="nav">
                         <li><a href="{{ route('homepage') }}">Home</a></li>
@@ -14,7 +16,8 @@
                             <ul>
                                 @foreach ($categories as $category)
                                     <li>
-                                        <a class="text-capitalize" href="{{ route('byCategory', ['category' => $category]) }}">
+                                        <a class="text-capitalize"
+                                            href="{{ route('byCategory', ['category' => $category]) }}">
                                             {{ $category->name }}
                                         </a>
                                     </li>
@@ -30,7 +33,8 @@
                                     <li><a href="#">Something else here</a></li>
                                     <li><a href="{{ route('create.article') }}">Crea</a></li>
                                     <li>
-                                        <a href="#" onclick="event.preventDefault();document.querySelector('#form-logout').submit()">
+                                        <a href="#"
+                                            onclick="event.preventDefault();document.querySelector('#form-logout').submit()">
                                             Logout
                                         </a>
                                     </li>
