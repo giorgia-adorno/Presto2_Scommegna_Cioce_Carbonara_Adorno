@@ -12,7 +12,7 @@
                 <a href="{{ route('article.show', compact('article')) }}" class="btn btn-primary px-4 rounded-pill shadow-sm">Dettaglio</a>
                 
                 <a href="{{ route('byCategory', ['category' => $article->category]) }}" class="text-decoration-none text-secondary small fw-medium"> 
-                    {{-- {{ $article->category->name }} --}}
+                    {{ $article->category->name }}
                     Categoria
                 </a>
             </div>
