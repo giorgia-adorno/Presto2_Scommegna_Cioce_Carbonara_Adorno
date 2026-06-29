@@ -44,4 +44,13 @@ class RevisorController extends Controller
         Artisan::call('app:make-user-revisor', ['email' => $user->email]);
         return redirect()->back();
     }
+
+    public function undo()
+    {
+        $lastArticle = Article::whereNotNull('is_accepted')->orderBy('updated_at', 'desc')->first();
+        if ($lastArticle) {
+            $lastArticle->setAccepted(null);
+        }
+        return redirect()->back()->with('message', 'Ultima operazione annullata!');
+    }
 }

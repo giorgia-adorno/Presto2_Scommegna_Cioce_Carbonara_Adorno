@@ -68,5 +68,14 @@
             </div>
         @endif
 
+        <!-- Annulla ultima operazione - sempre visibile -->
+        <div class="container text-center mt-4">
+            <form action="{{ route('revisor.undo') }}" method="POST">
+                @csrf
+                @method('PATCH')
+                <button class="btn py-2 px-5 fw-bold" style="background-color: #555; color: #fff; border-radius: 4px;">↩ Annulla ultima operazione</button>
+            </form>
+        </div>
+
     </div>
 </x-layout>
