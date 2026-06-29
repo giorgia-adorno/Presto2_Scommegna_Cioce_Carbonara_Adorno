@@ -1,7 +1,7 @@
 <x-layout>
     <div style="background: linear-gradient(135deg, #1c483c 0%, #1a3028 100%); min-height: 100vh; padding-bottom: 60px;">
         <div class="container">
-            <div class="row justify-content-center align-items-center text-center" style="padding-top: 60px; padding-bottom: 40px; border-bottom: 1px solid #1a3028;">
+            <div class="row justify-content-center align-items-center text-center" style="padding-top: 60px; padding-bottom: 40px;">
                 <div class="col-12">
                     <span class="section-label">Scopri i nostri annunci</span>
                     <h1 class="display-4 fw-bold mt-2" style="color: #fff; font-family: 'Poppins', sans-serif;">
@@ -23,7 +23,7 @@
             </div>
         </div>
 
-        <div class="d-flex justify-content-center" style="border-top: 1px solid #1a3028; padding-top: 30px; padding-bottom: 30px;">
+        <div class="d-flex justify-content-center" style=" padding-top: 30px; padding-bottom: 30px;">
             <div>
                 {{ $articles->links() }}
             </div>
