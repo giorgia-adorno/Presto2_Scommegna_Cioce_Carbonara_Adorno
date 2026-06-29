@@ -1,12 +1,12 @@
 <x-layout>
     <!-- Tutta la pagina con sfondo scuro -->
-    <div style="background: linear-gradient(135deg, #0d1f1a 0%, #1a3028 100%); min-height: 100vh;">
+    <div style="background: linear-gradient(135deg, #1c483c 0%, #1a3028 100%); min-height: 100vh;">
         
         <!-- Banner principale -->
         <div style="min-height: 65vh; display: flex; align-items: center; justify-content: center; text-align: center;">
             <div>
                 <span class="section-label">Benvenuto su</span>
-                <h1 style="color: #fff; font-family: 'Poppins', sans-serif; font-size: 72px; font-weight: 800; margin: 15px 0; letter-spacing: -2px;">subirra.it</h1>
+                <h1 style="color: #fff; font-family: 'Poppins', sans-serif; font-size: 72px; font-weight: 800; margin: 15px 0; letter-spacing: -2px;">Subirra.it</h1>
                 <p style="color: #888; font-size: 16px; margin-bottom: 35px; letter-spacing: 1px;">Il marketplace italiano per i tuoi annunci</p>
                 <div class="my-3">
                     @auth

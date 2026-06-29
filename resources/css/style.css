@@ -433,3 +433,24 @@ footer .under-footer ul li a:hover {
     margin-top: 30px;
   }
 }
+
+/* VIDEO INTRO */
+#intro-overlay {
+    position: fixed;
+    inset: 0;
+    background: black;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity .5s ease;
+}
+#intro-overlay.fade-out {
+    opacity: 0;
+}
+
+#intro-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

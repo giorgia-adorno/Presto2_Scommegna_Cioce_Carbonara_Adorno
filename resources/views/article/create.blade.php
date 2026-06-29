@@ -1,5 +1,5 @@
 <x-layout>
-    <div style="background: linear-gradient(135deg, #0d1f1a 0%, #1a3028 100%); min-height: 100vh; padding-bottom: 60px;">
+    <div style="background: linear-gradient(135deg, #1c483c 0%, #1a3028 100%); min-height: 100vh; padding-bottom: 60px;">
         <div class="container">
             <div class="row justify-content-center text-center" style="padding-top: 60px; padding-bottom: 40px;">
                 <div class="col-12">

@@ -10,6 +10,13 @@
     <title>Presto2</title>
 </head>
 <body>
+    @if(session('showAnimation'))
+    <div id="intro-overlay">
+        <video autoplay muted playsinline id="intro-video">
+            <source src="{{ asset('videos/login.mp4') }}" type="video/mp4">
+        </video>
+    </div>
+@endif
     <x-navbar />
     <div class="min-vh-100">
         {{$slot}}
