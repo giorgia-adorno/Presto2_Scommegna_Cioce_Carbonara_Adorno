@@ -16,13 +16,10 @@
 
     <div style="background: linear-gradient(135deg, #1c483c 0%, #1a3028 100%); min-height: 100vh;">
 
-<!-- HERO SECTION EFFETTO iBEER CON SCHIUMA -->
 <div id="beer-hero" class="hero-section">
 
-    <!-- Il livello della birra bionda -->
     <div class="beer-bg" id="beer-liquid" style="background-image: url('{{ asset('storage/images/hero-beer.jpg') }}');"></div>
 
-    <!-- NUOVO: Il livello della schiuma che si muove sopra la birra -->
     <div class="beer-foam-layer" id="beer-foam"></div>
 
     <div class="hero-overlay"></div>
