@@ -35,6 +35,9 @@ p {
 }
 
 /* HEADER */
+/* ==========================================================================
+   HEADER PRINCIPALE
+   ========================================================================== */
 .header-area {
     background-color: #1a1a1a;
     position: fixed;
@@ -51,96 +54,81 @@ p {
     height: 60px;
 }
 
+/* Distribuzione flessibile degli elementi (Logo a sinistra, Menu/Search a destra) */
 .header-area .main-nav {
-    min-height: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background: transparent;
+    transition: all 0.4s ease-in-out;
 }
 
 .header-area.navbar-scrolled .main-nav {
-    min-height: 60px;
-}
-
-.header-area .main-nav .logo {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-
-    gap: 12px;
-
-    height: 80px;
-
-    float: left;
-
-    width: auto;
-
-    margin-right: 15px;
-    margin-left: -40px;
-
-    transition: all 0.4s ease;
-}
-
-.logonav {
-    height: 140px;
-    width: auto;
-
-    object-fit: contain;
-
-    display: block;
-
-    margin-top: 10px;
-
-    transition: all 0.4s ease;
-}
-.logo-text {
-    color: #ffffff;
-
-    font-size: 30px;
-
-    font-weight: 800;
-
-    letter-spacing: -1px;
-
-    opacity: 0;
-
-    transform: translateX(-20px);
-
-    transition: all 0.4s ease;
-
-    white-space: nowrap;
-}
-.header-area.navbar-scrolled .logo {
     height: 60px;
 }
 
+/* ==========================================================================
+   STRUTTURA LOGO (INGRANDITO)
+   ========================================================================== */
+.header-area .main-nav .logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+    position: relative; /* Base per il posizionamento assoluto dell'immagine */
+}
+
+/* L'immagine ora fluttua liberamente ed è molto più grande */
+.logonav {
+    height: 110px; /* Imposta l'altezza che preferisci per il tuo logo */
+    width: auto;
+    object-fit: contain;
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    transition: all 0.4s ease;
+    z-index: 10;
+}
+
+/* Il logo si rimpicciolisce delicatamente allo scroll della pagina */
 .header-area.navbar-scrolled .logonav {
-  opacity: 0;
+    height: 80px; 
+}
 
-  width: 0;
-
-  height: 0;
-
-  margin: 0;
-
-  transform: scale(0);
+/* Spostiamo il testo a destra per non sovrapporlo all'immagine sporgente */
+.logo-text {
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    white-space: nowrap;
+    transition: all 0.4s ease;
+    margin-left: 115px; /* Crea lo spazio necessario per l'immagine del logo */
 }
 
 .header-area.navbar-scrolled .logo-text {
-  opacity: 1;
+    font-size: 22px;
+    margin-left: 85px; /* Riduce lo spazio quando l'immagine rimpicciolisce */
+}
 
-  transform: translateX(0);
+/* ==========================================================================
+   CONTENITORE DESTRO (MENU + SEARCH BAR)
+   ========================================================================== */
+.nav-container-right {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Spazio di sicurezza tra l'ultimo link del menu e la barra di ricerca */
 }
 
 .header-area .main-nav .nav {
-    float: right;
-    margin-top: 20px;
-    background-color: transparent;
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 999;
-}
-
-.header-area.navbar-scrolled .main-nav .nav {
-    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .header-area .main-nav .nav li {
@@ -165,6 +153,9 @@ p {
     color: #d4a843 !important;
 }
 
+/* ==========================================================================
+   MENU DROP-DOWN (CATEGORIE / UTENTE)
+   ========================================================================== */
 .header-area .main-nav .nav li.submenu {
     position: relative;
     padding-right: 28px;
@@ -232,11 +223,32 @@ p {
 .header-area .main-nav .nav li.submenu:hover ul {
     visibility: visible;
     opacity: 1;
-    z-index: 1;
+    z-index: 100; /* Aumentato per evitare che vada sotto i contenuti della pagina */
     transform: translateY(0);
     transition-delay: 0s, 0s, 0.3s;
 }
 
+/* ==========================================================================
+   BARRA DI RICERCA STILI
+   ========================================================================== */
+.search-form-nav {
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+}
+
+.search-form-nav .btn-outline-success {
+    color: #d4a843;
+    border-color: #d4a843;
+}
+
+.search-form-nav .btn-outline-success:hover {
+    background-color: #d4a843;
+    color: #fff;
+    border-color: #d4a843;
+}
+
+/*RESPONSIVE / MOBILE TRIGGER */
 .header-area .main-nav .menu-trigger {
     cursor: pointer;
     display: none;
