@@ -4,8 +4,8 @@
         <div class="auth-card">
 
             <div class="text-center mb-4">
-                <span class="section-label">Bentornato</span>
-                <h1 class="auth-title">Accedi</h1>
+                <span class="section-label">{{ __('ui.welcomeBack') }}</span>
+                <h1 class="auth-title">{{ __('ui.login') }}</h1>
                 <div class="mx-auto mt-3" style="width:60px;height:3px;background:#d4a843;"></div>
             </div>
 
@@ -32,11 +32,11 @@
                     @enderror
                 </div>
 
-                <button type="submit" class="auth-button">Accedi</button>
+                <button type="submit" class="auth-button">{{ __('ui.login') }}</button>
 
                 <div class="auth-link">
-                    Non hai un account?
-                    <a href="{{ route('register') }}">Registrati</a>
+                    {{ __('ui.noAccount') }}
+                    <a href="{{ route('register') }}">{{ __('ui.register') }}</a>
                 </div>
 
             </form>

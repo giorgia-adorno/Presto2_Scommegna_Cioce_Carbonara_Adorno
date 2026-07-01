@@ -1007,3 +1007,27 @@ footer .under-footer ul li a:hover {
     color: var(--beer-dark) !important;
     font-weight: 700;
 }
+
+
+/* NAVBAR COMPATTA */
+.nav-container-right {
+    gap: 16px !important;
+}
+
+.header-area .main-nav .nav li {
+    margin: 0 4px !important;
+}
+
+.header-area .main-nav .nav li a {
+    font-size: 13px !important;
+    padding: 0 4px !important;
+}
+
+.search-form-nav {
+    min-width: 150px !important;
+}
+
+.search-form-nav .form-control {
+    font-size: 12px !important;
+    padding: 4px 8px !important;
+}

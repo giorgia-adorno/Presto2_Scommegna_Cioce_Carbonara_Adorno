@@ -9,7 +9,7 @@
                     <div class="col-12 col-md-8">
 
                         <span class="section-label d-block mb-2">
-                            Categoria
+                            {{ __('ui.category') }}
                         </span>
 
                         <h1 class="category-title text-light display-4 fw-bold">
@@ -17,7 +17,7 @@
                         </h1>
 
                         <p class="category-subtitle text-light opacity-75 fs-5">
-                            Scopri tutti gli annunci disponibili
+                            {{ __('ui.discoverAds') }}
                         </p>
 
                     </div>
@@ -40,17 +40,17 @@
                     <div class="col-12 text-center py-5">
 
                         <h2 class="empty-category text-light">
-                            Nessun articolo trovato
+                            {{ __('ui.noArticles') }}
                         </h2>
 
                         <p class="text-light mb-4 opacity-75">
-                            Questa categoria è ancora vuota.
+                            {{ __('ui.emptyCategory') }}
                         </p>
 
                         @auth
                             <div class="main-border-button">
                                 <a href="{{ route('create.article') }}" class="btn btn-outline-light">
-                                    Pubblica un articolo
+                                    {{ __('ui.publish') }}
                                 </a>
                             </div>
                         @endauth

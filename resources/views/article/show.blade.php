@@ -3,7 +3,7 @@
         <div class="container py-5">
             <div class="row mb-5 justify-content-center align-items-center text-center">
                 <div class="col-12 col-md-8">
-                    <span class="section-label">Dettaglio Prodotto</span>
+                    <span class="section-label">{{ __('ui.productDetail') }}</span>
                     <h1 class="display-4 fw-bold mt-2" style="color: #fff; font-family: 'Poppins', sans-serif;">{{ $article->title }}</h1>
                     <div class="mx-auto mt-3" style="width: 60px; height: 3px; background-color: #d4a843;"></div>
                 </div>
@@ -27,11 +27,11 @@
                         
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
+                            <span class="visually-hidden">{{ __('ui.previous') }}</span>
                         </button>
                         <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
                             <span class="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
+                            <span class="visually-hidden">{{ __('ui.next') }}</span>
                         </button>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                             
                             <hr style="border-top: 1px solid rgba(255, 243, 196, 0.15);">
                             
-                            <h5 class="fw-bold mb-3" style="color: #d4a843; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">Descrizione</h5>
+                            <h5 class="fw-bold mb-3" style="color: #d4a843; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">{{ __('ui.description') }}</h5>
                             <p style="color: #fff3c4; line-height: 1.8; font-size: 15px; text-align: justify; margin-bottom: 0;">
                                 {{ $article->description }}
                             </p>
@@ -57,7 +57,7 @@
                         
                         <div class="mt-5">
                             <a href="{{ route('article.index') }}" class="main-dark-button" style="text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">
-                                ← Torna indietro
+                                ← {{ __('ui.goBack') }}
                             </a>
                         </div>
                     </div>

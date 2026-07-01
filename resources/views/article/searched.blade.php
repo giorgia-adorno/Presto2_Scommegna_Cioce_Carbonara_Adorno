@@ -4,9 +4,9 @@
             <div class="row justify-content-center align-items-center text-center"
                 style="padding-top: 60px; padding-bottom: 40px;">
                 <div class="col-12">
-                    <span class="section-label">Esplora i risultati</span>
+                    <span class="section-label">{{ __('ui.exploreResults') }}</span>
                     <h1 class="display-4 fw-bold mt-2" style="color: #fff; font-family: 'Poppins', sans-serif;">
-                        Risultati per: <span class="fst-italic" style="color: #d4a843;">"{{ $query }}"</span>
+                        {{ __('ui.resultsFor') }}: <span class="fst-italic" style="color: #d4a843;">"{{ $query }}"</span>
                     </h1>
                     <div class="mx-auto mt-3" style="width: 60px; height: 3px; background-color: #d4a843;"></div>
                 </div>
@@ -20,7 +20,7 @@
                 @empty
                     <div class="col-12">
                         <h2 class="text-center" style="color: #aaa; font-family: 'Poppins', sans-serif;">
-                            Nessun articolo corrisponde alla tua ricerca
+                            {{ __('ui.noSearchResults') }}
                         </h2>
                     </div>
                 @endforelse

@@ -9,10 +9,10 @@
         
         <div class="card-footer-custom">
             <a href="{{ route('article.show', compact('article')) }}" class="btn-presto">
-                Dettaglio
+                {{ __('ui.detail') }}
             </a>
             <a href="{{ route('byCategory', ['category' => $article->category]) }}" class="text-decoration-none small fw-medium" style="color: #aaa; font-size: 12px;">
-                Categoria: <strong>
+                {{ __('ui.category') }}: <strong>
                 {{ $article->category->name }}
                 </strong>
             </a>

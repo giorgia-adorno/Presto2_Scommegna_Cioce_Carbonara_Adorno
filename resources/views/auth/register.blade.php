@@ -4,8 +4,8 @@
         <div class="auth-card">
 
             <div class="text-center mb-4">
-                <span class="section-label">Nuovo Account</span>
-                <h1 class="auth-title">Registrati</h1>
+                <span class="section-label">{{ __('ui.newAccount') }}</span>
+                <h1 class="auth-title">{{ __('ui.register') }}</h1>
                 <div class="mx-auto mt-3" style="width:60px;height:3px;background:#d4a843;"></div>
             </div>
 
@@ -14,7 +14,7 @@
 
                 {{-- NAME --}}
                 <div class="mb-3">
-                    <label class="auth-label">Nome</label>
+                    <label class="auth-label">{{ __('ui.name') }}</label>
                     <input type="text" name="name" value="{{ old('name') }}" class="auth-input">
 
                     @error('name')
@@ -44,15 +44,15 @@
 
                 {{-- CONFIRM PASSWORD --}}
                 <div class="mb-3">
-                    <label class="auth-label">Conferma Password</label>
+                    <label class="auth-label">{{ __('ui.confirmPassword') }}</label>
                     <input type="password" name="password_confirmation" class="auth-input">
                 </div>
 
-                <button type="submit" class="auth-button">Registrati</button>
+                <button type="submit" class="auth-button">{{ __('ui.register') }}</button>
 
                 <div class="auth-link">
-                    Hai già un account?
-                    <a href="{{ route('login') }}">Accedi</a>
+                    {{ __('ui.alreadyAccount') }}
+                    <a href="{{ route('login') }}">{{ __('ui.login') }}</a>
                 </div>
 
             </form>

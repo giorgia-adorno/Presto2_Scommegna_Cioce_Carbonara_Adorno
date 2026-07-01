@@ -25,3 +25,7 @@ Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->n
 
 Route::patch('/revisor/undo', [RevisorController::class, 'undo'])->middleware('isRevisor')->name('revisor.undo');
 Route::get('/search/article', [PublicController::class, 'searchArticles'])->name('article.search');
+
+// cambio lingua
+Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setlocale');
+

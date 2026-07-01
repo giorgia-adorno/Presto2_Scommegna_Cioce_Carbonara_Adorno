@@ -4,9 +4,9 @@
             <div class="row justify-content-center align-items-center text-center"
                 style="padding-top: 60px; padding-bottom: 40px;">
                 <div class="col-12">
-                    <span class="section-label">Scopri i nostri annunci</span>
+                    <span class="section-label">{{ __('ui.discoverAds') }}</span>
                     <h1 class="display-4 fw-bold mt-2" style="color: #fff; font-family: 'Poppins', sans-serif;">
-                        Tutti gli Articoli
+                        {{ __('ui.allArticles') }}
                     </h1>
                     <div class="mx-auto mt-3" style="width: 60px; height: 3px; background-color: #d4a843;"></div>
                 </div>
@@ -18,14 +18,13 @@
                     </div>
                 @empty
                     <div class="col-12">
-                        <h2 class="text-center" style="color: #aaa; font-family: 'Poppins', sans-serif;">Nessun articolo
-                            trovato</h2>
+                        <h2 class="text-center" style="color: #aaa; font-family: 'Poppins', sans-serif;">{{ __('ui.noArticles') }}</h2>
                     </div>
                 @endforelse
             </div>
         </div>
 
-        <div class="d-flex justify-content-center" style=" padding-top: 30px; padding-bottom: 30px;">
+        <div class="d-flex justify-content-center" style="padding-top: 30px; padding-bottom: 30px;">
             <div>
                 {{ $articles->links() }}
             </div>
