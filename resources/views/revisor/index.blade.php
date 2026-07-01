@@ -9,7 +9,6 @@
             </div>
         @endif
 
-        <!-- Header dashboard -->
         <div class="container" style="padding-top: 60px; padding-bottom: 40px;">
             <div class="row">
                 <div class="col-12 text-center">
@@ -21,19 +20,26 @@
         </div>
 
         @if ($article_to_check)
-            <div class="container" style="padding-top: 20px;">
-                <div class="row justify-content-center g-4">
+            <div class="container">
+                <div class="row g-4 align-items-stretch">
                     
-                    <div class="col-12 col-md-7">
+                    <div class="col-12 col-md-8">
                         <div class="row">
-                            @for ($i = 0; $i < 6; $i++)
-                                <div class="col-6 col-md-4 mb-3">
-                                    <img src="https://picsum.photos/300"
-                                        class="img-fluid rounded shadow w-100"
-                                        alt="immagine segnaposto"
-                                        style="height: 150px; object-fit: cover; border: 1px solid rgba(212, 168, 67, 0.1);">
-                                </div>
-                            @endfor
+                            @if ($article_to_check->images->count())
+                                @foreach ($article_to_check->images as $key => $image)
+                                    <div class="col-6 col-md-4 mb-4">
+                                        <img src="{{ Storage::url($image->path) }}" class="img-fluid rounded shadow w-100 object-fit-cover" style="height: 250px;"
+                                            alt="Immagine {{ $key + 1 }} dell'articolo '{{ $article_to_check->title }}'">
+                                    </div>
+                                @endforeach
+                            @else
+                                @for ($i = 0; $i < 6; $i++)
+                                    <div class="col-6 col-md-4 mb-4 text-center">
+                                        <img src="https://picsum.photos/300" alt="immagine segnaposto"
+                                            class="img-fluid rounded shadow w-100 object-fit-cover" style="height: 250px;">
+                                    </div>
+                                @endfor
+                            @endif
                         </div>
                     </div>
                     
@@ -87,6 +93,6 @@
                 </button>
             </form>
         </div>
-
+        
     </div>
 </x-layout>

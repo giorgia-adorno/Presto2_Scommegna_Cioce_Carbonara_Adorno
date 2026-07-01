@@ -4,13 +4,11 @@
             <div class="col-12">
                 <nav class="main-nav">
 
-                    <!-- LOGO COMPLESSIVO -->
                     <a href="{{ route('homepage') }}" class="logo">
                         <img class="logonav" src="{{ asset('/storage/images/logo.png') }}" alt="Logo Subirra">
                         <span class="logo-text">Subirra.it</span>
                     </a>
 
-                    <!-- CONTENITORE DESTRO (MENU + SEARCH) -->
                     <div class="nav-container-right">
                         <ul class="nav">
                             <li><a href="{{ route('homepage') }}">{{ __('ui.home') }}</a></li>
@@ -35,8 +33,7 @@
                                     <li class="nav-item">
                                         <a class="position-relative" href="{{ route('revisor.index') }}">
                                             {{ __('ui.revisorZone') }}
-                                            <span
-                                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                                 {{ \App\Models\Article::toBeRevisedCount() }}
                                             </span>
                                         </a>
@@ -46,16 +43,12 @@
                                 <li class="submenu">
                                     <a href="javascript:;">{{ __('ui.hello') }}, {{ Auth::user()->name }}</a>
                                     <ul>
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
                                         <li><a href="{{ route('create.article') }}">{{ __('ui.create') }}</a></li>
                                         @if (Auth::user()->is_revisor)
                                             <li><a href="{{ route('revisor.index') }}">{{ __('ui.revisorZone') }}</a></li>
                                         @endif
                                         <li>
-                                            <a href="#"
-                                                onclick="event.preventDefault(); document.querySelector('#form-logout').submit()">
+                                            <a href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit()">
                                                 {{ __('ui.logout') }}
                                             </a>
                                         </li>
@@ -70,30 +63,47 @@
                                     </ul>
                                 </li>
                             @endauth
+
+                            <li class="submenu">
+                                <a href="javascript:;" class="d-flex align-items-center gap-2">
+                                    <i class="fa fa-globe" style="color: #d4a843;"></i>
+                                    <span>
+                                        @if(App::getLocale() == 'uk') Language 
+                                        @elseif(App::getLocale() == 'es') Idioma 
+                                        @else Lingua 
+                                        @endif
+                                    </span>
+                                </a>
+                                <ul style="min-width: 160px; padding: 8px 0; background-color: #3d2514; border: 1px solid rgba(212, 168, 67, 0.15); border-radius: 6px;">
+                                    <li class="position-relative d-flex align-items-center gap-3 py-2 px-3 justify-content-start text-white">
+                                        <x-_locale lang="it"/>
+                                        <span style="font-size: 13px; letter-spacing: 0.5px; pointer-events: none;">Italiano</span>
+                                    </li>
+                                    <li class="position-relative d-flex align-items-center gap-3 py-2 px-3 justify-content-start text-white">
+                                        <x-_locale lang="uk"/>
+                                        <span style="font-size: 13px; letter-spacing: 0.5px; pointer-events: none;">English</span>
+                                    </li>
+                                    <li class="position-relative d-flex align-items-center gap-3 py-2 px-3 justify-content-start text-white">
+                                        <x-_locale lang="es"/>
+                                        <span style="font-size: 13px; letter-spacing: 0.5px; pointer-events: none;">Español</span>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
 
-                        <!-- BARRA DI RICERCA -->
-                        <form class="search-form-nav" role="search" action="{{ route('article.search') }}"
-                            method="GET">
+                        <form class="search-form-nav" role="search" action="{{ route('article.search') }}" method="GET">
                             <div class="input-group input-group-sm">
-                                <input type="search" name="query" class="form-control" placeholder="{{ __('ui.search') }}..."
-                                    aria-label="search">
+                                <input type="search" name="query" class="form-control" placeholder="{{ __('ui.search') }}..." aria-label="search">
                                 <button type="submit" class="btn btn-outline-success">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </div>
                         </form>
 
-                        <!-- BANDIERE LINGUA -->
-                        <div class="d-flex align-items-center gap-1">
-                            <x-_locale lang="it"/>
-                            <x-_locale lang="uk"/>
-                            <x-_locale lang="es"/>
-                        </div>
-
                         <a class="menu-trigger">
                             <span>Menu</span>
                         </a>
+                    </div>
 
                 </nav>
             </div>

@@ -56,5 +56,16 @@ return [
     'noArticlesToReview' => 'Nessun articolo da revisionare',
     'goHome' => 'Torna all\'homepage',
     'undoLastAction' => 'Annulla ultima operazione',
+    'Pilsner & Lager' => 'Pilsner & Lager',
+'IPA (India Pale Ale)' => 'IPA (India Pale Ale)',
+'Pale Ale & Amber Ale' => 'Pale Ale & Amber Ale',
+'Stout & Porter' => 'Stout & Porter',
+'Blanche & Witbier' => 'Blanche & Witbier',
+'Weissbier (Weizen)' => 'Weissbier (Weizen)',
+'Belgian Strong Ale' => 'Belgian Strong Ale',
+'Sour & Gose' => 'Sour & Gose',
+'Bock & Strong Lager' => 'Bock & Strong Lager',
+'Analcoliche & Low Alcohol' => 'Analcoliche & Low Alcohol',
+'Language' => 'Lingua',
 
 ];

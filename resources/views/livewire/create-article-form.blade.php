@@ -1,5 +1,4 @@
-<div>
-    <div class="container py-5" style="min-height: 100vh;">
+<div class="container py-5" style="min-height: 100vh;">
 
     @if (session()->has('success'))
         <div class="text-center py-3 mb-4" style="background-color: #d4a843; color: #1a1a1a; font-weight: 700; border-radius: 6px; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(212, 168, 67, 0.2);">
@@ -7,7 +6,7 @@
         </div>
     @endif
 
-    <form wire:submit="save" style="background-color: #3d2514; border-radius: 12px; padding: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.4); margin: 40px auto; max-width: 700px; border: 1px solid rgba(212, 168, 67, 0.15);">
+    <form wire:submit="store" style="background-color: #3d2514; border-radius: 12px; padding: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.4); margin: 40px auto; max-width: 700px; border: 1px solid rgba(212, 168, 67, 0.15);">
         
         <div class="mb-4">
             <label for="title" class="form-label" style="font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #d4a843;">{{ __('ui.title') }}:</label>
@@ -51,6 +50,36 @@
             @enderror
         </div>
 
+        <div class="mb-4">
+            <label class="form-label" style="font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #d4a843;">Immagini:</label>
+            <input type="file" wire:model.live="temporary_images" multiple
+                class="form-control shadow @error('temporary_images.*') is-invalid @enderror" placeholder="Img/"
+                style="border: 1px solid #5a3511; border-radius: 6px; padding: 12px 15px; font-size: 14px; background-color: #2b1a0e; color: #fff3c4;"/>
+            @error('temporary_images.*')
+                <p class="fst-italic" style="color: #ff5c5c; font-size: 12px; margin-top: 5px;">{{ $message }}</p>
+            @enderror
+            @error('temporary_images')
+                <p class="fst-italic" style="color: #ff5c5c; font-size: 12px; margin-top: 5px;">{{ $message }}</p>
+            @enderror
+        </div>
+
+        @if (!empty($images))
+            <div class="mb-4">
+                <p style="font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #d4a843;">Anteprima Foto:</p>
+                <div class="row border border-2 rounded shadow py-3 g-2" style="border-color: #5a3511 !important; background-color: #2b1a0e;">
+                    @foreach ($images as $key => $image)
+                        <div class="col-4 d-flex flex-column align-items-center my-2">
+                            <div class="img-preview mx-auto shadow rounded"
+                                style="background-image: url({{ $image->temporaryUrl() }}); width: 100px; height: 100px; background-size: cover; background-position: center;">
+                            </div>
+                            <button type="button" class="btn btn-sm mt-2 btn-danger" 
+                                wire:click="removeImage({{ $key }})">X</button>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        @endif
+
         <div class="d-flex justify-content-center mt-4">
             <button type="submit" class="btn-presto" style="padding: 14px 50px; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; background-color: #fff3c4; border: none; color: #1a1a1a; font-weight: 700; border-radius: 6px; transition: all 0.3s ease;">
                 {{ __('ui.publishArticle') }}
@@ -68,4 +97,5 @@
         });
     </script>
     @endscript
+
 </div>
